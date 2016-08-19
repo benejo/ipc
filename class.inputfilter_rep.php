@@ -23,8 +23,8 @@ class InputFilter_rep
 	var $attrMethod; // default = 0
 
 	var $xssAuto; // default = 1
-	var $tagBlacklist = array ('applet', 'body', 'bgsound', 'base', 'basefont', 'embed', 'frame', 'frameset', 'head', 'html', 'id', 'iframe', 'ilayer', 'layer', 'link', 'meta', 'name', 'object', 'script', 'style', 'title', 'xml');
-	var $attrBlacklist = array ('action', 'background', 'codebase', 'dynsrc', 'lowsrc'); // also will strip ALL event handlers
+	var $tagBlacklist =  ['applet', 'body', 'bgsound', 'base', 'basefont', 'embed', 'frame', 'frameset', 'head', 'html', 'id', 'iframe', 'ilayer', 'layer', 'link', 'meta', 'name', 'object', 'script', 'style', 'title', 'xml'];
+	var $attrBlacklist =  ['action', 'background', 'codebase', 'dynsrc', 'lowsrc']; // also will strip ALL event handlers
 
 	/**
 	 * Constructor for inputFilter class. Only first parameter is required.
@@ -37,7 +37,7 @@ class InputFilter_rep
 	 * @param	int		$xssAuto	Only auto clean essentials = 0, Allow clean
 	 * blacklisted tags/attr = 1
 	 */
-	function inputFilter($tagsArray = array (), $attrArray = array (), $tagsMethod = 0, $attrMethod = 0, $xssAuto = 1)
+	function inputFilter($tagsArray =  [], $attrArray =  [], $tagsMethod = 0, $attrMethod = 0, $xssAuto = 1)
 	{
 		/*
 		 * Make sure user defined arrays are in lowercase
@@ -180,7 +180,7 @@ class InputFilter_rep
 			$currentTag		= substr($fromTagOpen, 0, $tagOpen_end);
 			$tagLength		= strlen($currentTag);
 			$tagLeft		= $currentTag;
-			$attrSet		= array ();
+			$attrSet		=  [];
 			$currentSpace	= strpos($tagLeft, ' ');
 
 			/*
@@ -337,7 +337,7 @@ class InputFilter_rep
 		/*
 		 * Initialize variables
 		 */
-		$newSet = array ();
+		$newSet =  [];
 
 		/*
 		 * Iterate through attribute pairs
